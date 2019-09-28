@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.registration.RegistrationActivity">
+
+        <!--Header-->
+        <TextView
+            android:id="@+id/header_layout"
+            android:elevation="1dp"
+            android:text="@string/register"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:background="@drawable/header_gradient"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+        <!--Doctor or patient-->
+        <LinearLayout
+            android:id="@+id/selection_layput"
+            app:layout_constraintTop_toBottomOf="@id/header_layout"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:weightSum="2"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/doctor_btn"
+                android:text="@string/doctor"
+                android:textSize="26sp"
+                android:textColor="@color/white"
+                android:background="@drawable/doctor_selected"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"/>
+
+            <Button
+                android:id="@+id/patient_btn"
+                android:text="@string/patient"
+                android:textSize="26sp"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/patient_unselected"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="60dp"/>
+
+        </LinearLayout>
+
+        <!--Container-->
+
+            <doctor.task.dentist.base.helpers.NonSwipeableViewPager
+                android:id="@+id/registeration_viewpager"
+                android:background="@drawable/registertaion_container_background"
+                app:layout_constraintTop_toBottomOf="@id/header_layout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="74dp"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

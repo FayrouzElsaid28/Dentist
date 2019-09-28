@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Dentist</string>
+
+    <!--Registration-->
+    <string name="register">تسجيل الدخول</string>
+    <string name="doctor">طبيب</string>
+    <string name="patient">مريض</string>
+
+    <!--Login-->
+    <string name="dont_have_account">ليس لديك حساب</string>
+    <string name="signup">تسجيل؟</string>
+    <string name="number">الرقم المدني</string>
+    <string name="password">الرقم السري</string>
+
+    <!--Signup-->
+    <string name="full_name">الاسم بالكامل</string>
+    <string name="doctor_number">رقم الطبيب</string>
+    <string name="price">سعر الكشف</string>
+    <string name="picture">الصورة</string>
+    <string name="speciality">التخصص</string>
+    <string name="clinic">العيادة</string>
+
+    <!--Main-->
+    <string name="main">الصفحة الرئيسية</string>
+    <string name="clinic1">عيادة 1</string>
+    <string name="clinic2">عيادة 2</string>
+    <string name="clinic3">عيادة 3</string>
+    <string name="clinic4">عيادة 4</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

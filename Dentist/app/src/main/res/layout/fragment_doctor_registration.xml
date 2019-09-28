@@ -1,0 +1,13 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="doctor.task.dentist.view.registration.fragments.doctor.DoctorRegistrationFragment">
+
+    <doctor.task.dentist.base.helpers.NonSwipeableViewPager
+        android:id="@+id/doctor_registration_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
