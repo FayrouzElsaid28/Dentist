@@ -3,29 +3,73 @@
 
     <!--Registration-->
     <string name="register">تسجيل الدخول</string>
-    <string name="doctor">طبيب</string>
-    <string name="patient">مريض</string>
+    <string name="doctor">Doctor</string>
+    <string name="patient">Patient</string>
 
     <!--Login-->
     <string name="dont_have_account">ليس لديك حساب</string>
     <string name="signup">تسجيل؟</string>
     <string name="number">الرقم المدني</string>
-    <string name="password">الرقم السري</string>
+    <string name="password">Password</string>
 
     <!--Signup-->
-    <string name="full_name">الاسم بالكامل</string>
-    <string name="doctor_number">رقم الطبيب</string>
+    <string name="full_name">Full name</string>
+    <string name="doctor_number">Doctor number</string>
     <string name="price">سعر الكشف</string>
-    <string name="picture">الصورة</string>
-    <string name="speciality">التخصص</string>
-    <string name="clinic">العيادة</string>
+    <string name="picture">Picture</string>
+    <string name="speciality">Specialty</string>
+    <string name="clinic">Clinic</string>
+    <string name="doctor_appointments">مواعيد العمل</string>
+    <string name="day">Day</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="add_appointment">Add appointment</string>
+    <string name="already_have_account">Already have account</string>
+    <string name="login">تسجيل الدخول؟</string>
+    <string name="age">السن</string>
+    <string name="history">التاريخ المرضي</string>
+    <string name="disease_name">اسم المرض</string>
+    <string name="disease_date">تاريخ المرض</string>
+    <string name="add">أضافة</string>
+    <array name="days">
+        <item>الاحد</item>
+        <item>الاثنين</item>
+        <item>الثلاثاء</item>
+        <item>الاربعاء</item>
+        <item>الخميس</item>
+    </array>
 
     <!--Main-->
     <string name="main">الصفحة الرئيسية</string>
-    <string name="clinic1">عيادة 1</string>
-    <string name="clinic2">عيادة 2</string>
-    <string name="clinic3">عيادة 3</string>
-    <string name="clinic4">عيادة 4</string>
+    <string name="clinic1">Clinic 1</string>
+    <string name="clinic2">Clinic 2</string>
+    <string name="clinic3">Clinic 3</string>
+    <string name="clinic4">Clinic 4</string>
+
+    <!--Reservations-->
+    <string name="reservation_list">قائمة الحجوزات</string>
+    <string name="name">Name</string>
+    <string name="hour">Hour</string>
+
+    <!--Patient file-->
+    <string name="file">Patient file</string>
+    <string name="year">Year</string>
+
+    <!--Notification-->
+    <string name="notification">Notifications</string>
+
+    <!--Clinic-->
+    <string name="dates">Work dates</string>
+    <string name="clinic_numbers">Clinic numbers</string>
+    <string name="address">Address</string>
+    <string name="specialties">Specialties</string>
+    <string name="orthodontic">Orthodontic</string>
+    <string name="extraction">Extraction</string>
+    <string name="cleaning">Cleaning</string>
+    <string name="planting">Planting</string>
+
+    <!--Specialty-->
+    <string name="doctors">Doctors</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

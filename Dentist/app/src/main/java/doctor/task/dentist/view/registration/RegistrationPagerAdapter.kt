@@ -4,8 +4,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import doctor.task.dentist.view.BlankFragment
-import doctor.task.dentist.view.registration.fragments.doctor.DoctorRegistrationFragment
-import doctor.task.dentist.view.registration.fragments.patient.PatientRegistrationFragment
+import doctor.task.dentist.view.features.doctor.registeration.DoctorRegistrationFragment
+import doctor.task.dentist.view.features.patient.registration.PatientRegistrationFragment
 
 @Suppress("DEPRECATION")
 class RegistrationPagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {

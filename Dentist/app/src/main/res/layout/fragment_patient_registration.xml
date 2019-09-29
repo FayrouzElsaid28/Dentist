@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="doctor.task.dentist.view.registration.fragments.patient.PatientRegistrationFragment">
+    tools:context="doctor.task.dentist.view.features.patient.registration.PatientRegistrationFragment">
 
    <doctor.task.dentist.base.helpers.NonSwipeableViewPager
        android:id="@+id/pateirnt_registration_viewpager"

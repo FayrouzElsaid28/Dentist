@@ -7,6 +7,7 @@ import android.content.SharedPreferences
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.Toast
+import doctor.task.dentist.view.registration.RegistrationActivity
 
 private const val PREFERENCE_NAME = "doctor.dentist"
 
@@ -16,6 +17,11 @@ fun <T> Activity.openActivity(context: Context, cls: Class<T>) {
 
 fun <T> Activity.openActivityClearStack(context: Context, cls: Class<T>) {
     startActivity(Intent(context, cls).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK))
+}
+
+fun Activity.logOut(context: Context){
+    getSharedPreferences().edit().remove("user").apply()
+    openActivity(context,RegistrationActivity::class.java)
 }
 
 fun Activity.makeLongToast(message: String) {
