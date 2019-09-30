@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import doctor.task.dentist.R
 import doctor.task.dentist.base.extensions.openActivity
+import doctor.task.dentist.view.features.patient.PatientHelper
 import doctor.task.dentist.view.features.patient.adapters.ClinicDatesAdapter
 import doctor.task.dentist.view.features.patient.adapters.ClinicNumbersAdapter
 import doctor.task.dentist.view.features.patient.notification.NotificationActivity
@@ -39,5 +40,24 @@ class ClinicDetailsActivity : AppCompatActivity() {
         clinic_location.setOnClickListener {
             //TODO:: open location on map
         }
+
+        //Set specialty
+        specialty1.setOnClickListener {
+            setSpecify("orthodontics")
+        }
+        specialty2.setOnClickListener {
+            setSpecify("tooth-removal")
+        }
+        specialty3.setOnClickListener {
+            setSpecify("cleaning")
+        }
+        specialty4.setOnClickListener {
+            setSpecify("dental-implants")
+        }
+    }
+
+    private fun setSpecify(specify: String){
+        PatientHelper.specify = specify
+        openActivity(this,SpecialtyActivity::class.java)
     }
 }

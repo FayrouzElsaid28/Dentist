@@ -39,6 +39,7 @@
         android:layout_height="100dp"/>
 
     <TextView
+        android:id="@+id/doctor_dates"
         android:text="doctor dates"
         android:textSize="10sp"
         app:layout_constraintTop_toTopOf="parent"

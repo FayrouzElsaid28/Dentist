@@ -2,52 +2,54 @@
     <string name="app_name">Dentist</string>
 
     <!--Registration-->
-    <string name="register">تسجيل الدخول</string>
+    <string name="register">Sign in</string>
     <string name="doctor">Doctor</string>
     <string name="patient">Patient</string>
 
     <!--Login-->
-    <string name="dont_have_account">ليس لديك حساب</string>
-    <string name="signup">تسجيل؟</string>
-    <string name="number">الرقم المدني</string>
+    <string name="dont_have_account">Dont have account</string>
+    <string name="signup">Sign in ?</string>
+    <string name="number">Civil number</string>
     <string name="password">Password</string>
 
     <!--Signup-->
     <string name="full_name">Full name</string>
     <string name="doctor_number">Doctor number</string>
-    <string name="price">سعر الكشف</string>
+    <string name="price">Price</string>
     <string name="picture">Picture</string>
     <string name="speciality">Specialty</string>
     <string name="clinic">Clinic</string>
-    <string name="doctor_appointments">مواعيد العمل</string>
+    <string name="doctor_appointments">Work dates</string>
     <string name="day">Day</string>
     <string name="from">From</string>
     <string name="to">To</string>
     <string name="add_appointment">Add appointment</string>
     <string name="already_have_account">Already have account</string>
-    <string name="login">تسجيل الدخول؟</string>
-    <string name="age">السن</string>
-    <string name="history">التاريخ المرضي</string>
-    <string name="disease_name">اسم المرض</string>
-    <string name="disease_date">تاريخ المرض</string>
-    <string name="add">أضافة</string>
+    <string name="login">Sign in?</string>
+    <string name="age">Age</string>
+    <string name="history">Disease history</string>
+    <string name="disease_name">Disease name</string>
+    <string name="disease_date">Disease date</string>
+    <string name="add">Add</string>
     <array name="days">
-        <item>الاحد</item>
-        <item>الاثنين</item>
-        <item>الثلاثاء</item>
-        <item>الاربعاء</item>
-        <item>الخميس</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
     </array>
 
     <!--Main-->
-    <string name="main">الصفحة الرئيسية</string>
+    <string name="main">Main page</string>
     <string name="clinic1">Clinic 1</string>
     <string name="clinic2">Clinic 2</string>
     <string name="clinic3">Clinic 3</string>
     <string name="clinic4">Clinic 4</string>
 
     <!--Reservations-->
-    <string name="reservation_list">قائمة الحجوزات</string>
+    <string name="reservation_list">Reservation list</string>
     <string name="name">Name</string>
     <string name="hour">Hour</string>
 

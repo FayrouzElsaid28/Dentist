@@ -1,5 +1,6 @@
 package doctor.task.dentist.view.registration
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.androidnetworking.error.ANError
@@ -11,6 +12,8 @@ import org.json.JSONArray
 import java.io.File
 
 object RegistrationRepository {
+
+    lateinit var token: String
 
     fun registerPatient(fullName: String,
                         identityNumber: String,
@@ -37,6 +40,7 @@ object RegistrationRepository {
                 }
 
                 override fun onError(anError: ANError?) {
+                    Log.d("error", anError?.errorBody)
                     data.postValue(Resource.error("Something went wrong"))
                 }
             })
@@ -77,6 +81,7 @@ object RegistrationRepository {
                 }
 
                 override fun onError(anError: ANError?) {
+                    Log.d("error", anError?.errorBody)
                     data.postValue(Resource.error("Something went wrong"))
                 }
             })
@@ -102,7 +107,8 @@ object RegistrationRepository {
             }
 
             override fun onError(anError: ANError?) {
-                data.postValue(Resource.error("Something went wrong"))
+                Log.d("error",anError?.errorBody)
+                data.postValue(Resource.error("Wrong password or id"))
             }
 
         })

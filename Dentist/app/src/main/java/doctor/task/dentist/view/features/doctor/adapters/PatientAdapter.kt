@@ -47,7 +47,7 @@ class PatientAdapter(private val callback: AdapterToViewCallback):
         if (position % 2 == 1)
             holder.item_patient.setBackgroundResource(R.color.white)
         else
-            holder.item_patient.setBackgroundResource(R.color.colorAccent)
+            holder.item_patient.setBackgroundResource(R.color.patient_color)
 
         holder.item_patient.setOnClickListener {
             setPatientData(patient_name,patient_age)

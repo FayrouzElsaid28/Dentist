@@ -7,11 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import doctor.task.dentist.R
 import doctor.task.dentist.view.features.patient.registration.PatientRegistrationHelper
+import org.json.JSONArray
 
 class DiseaseAdapter:
     RecyclerView.Adapter<DiseaseAdapter.ViewHolder>() {
 
-    var disease_list = arrayListOf<PatientRegistrationHelper>()
+    var disease_list = JSONArray()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -24,17 +25,17 @@ class DiseaseAdapter:
     }
 
     override fun getItemCount(): Int {
-        return disease_list.size
+        return disease_list.length()
     }
 
-    fun setDate(newData: ArrayList<PatientRegistrationHelper>){
+    fun setDate(newData: JSONArray){
         disease_list = newData
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.disease_name.text = disease_list[position].disease_name
-        holder.disease_date.text = disease_list[position].disease_date
+        holder.disease_name.text = disease_list.getJSONObject(position).getString("disease")
+        holder.disease_date.text = disease_list.getJSONObject(position).getString("date")
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

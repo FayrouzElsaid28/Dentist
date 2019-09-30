@@ -2,8 +2,10 @@
 <resources>
     <color name="colorPrimary">#21C4EE</color>
     <color name="colorPrimaryDark">#069EC6</color>
-    <color name="colorAccent">#DBF5FC</color>
+    <color name="colorAccent">#069EC6</color>
+    <color name="patient_color">#DBF5FC</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
     <color name="red">#ff0000</color>
+    <color name="transparent">#00000000</color>
 </resources>

@@ -41,14 +41,14 @@ class ClinicAdapter:
         holder.setIsRecyclable(false)
         holder.speciality_name.text = clinic_list[position]
 
-        if (DoctorRegistrationHelper.doctor_clinic == position){
+        if (DoctorRegistrationHelper.doctor_clinic == holder.speciality_name.text.toString()){
             holder.speciality_circle.setImageResource(R.drawable.speciality_circle_checked)
         }else{
             holder.speciality_circle.setImageResource(R.drawable.speciality_circle_unchecked)
         }
 
         holder.item_specialty.setOnClickListener {
-            DoctorRegistrationHelper.doctor_clinic = position
+            DoctorRegistrationHelper.doctor_clinic = holder.speciality_name.text.toString()
             notifyDataSetChanged()
         }
     }

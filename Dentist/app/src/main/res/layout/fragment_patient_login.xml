@@ -9,6 +9,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loading"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:elevation="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="400dp">
+
+            <include layout="@layout/loading"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <TextView
             android:id="@+id/patient_login_number_tv"
             android:text="@string/number"

@@ -30,3 +30,42 @@ fun Activity.makeLongToast(message: String) {
 
 fun Activity.getSharedPreferences(): SharedPreferences =
     getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE)
+
+fun Activity.getSpecialty(specialtyName: String): String {
+    var specialty = ""
+    when(specialtyName){
+        "Extraction" -> specialty = "tooth-removal"
+        "Orthodontic" -> specialty = "orthodontics"
+        "Planting" -> specialty = "dental-implants"
+        "Cleaning" -> specialty = "cleaning"
+    }
+
+    return specialty
+}
+
+fun Activity.getClinic(clinicName: String): String{
+    var clinic = ""
+    when(clinicName){
+        "Clinic 1" -> clinic = "clinic1"
+        "Clinic 2" -> clinic = "clinic2"
+        "Clinic 3" -> clinic = "clinic3"
+        "Clinic 4" -> clinic = "clinic4"
+    }
+
+    return clinic
+}
+
+fun Activity.getDay(dayName: String): String {
+    var day = ""
+    when(dayName){
+        "Saturday" -> day = "sat"
+        "Sunday" -> day = "sun"
+        "Monday" -> day = "mon"
+        "Tuesday" -> day = "tues"
+        "Wednesday" -> day = "wed"
+        "Thursday" -> day = "thurs"
+        "Friday" -> day = "fri"
+    }
+
+    return day
+}

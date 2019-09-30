@@ -3,6 +3,7 @@ package doctor.task.dentist.view.splash
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.util.Log
 import doctor.task.dentist.R
 import doctor.task.dentist.base.extensions.getSharedPreferences
 import doctor.task.dentist.base.extensions.openActivity
@@ -10,6 +11,7 @@ import doctor.task.dentist.base.helpers.LaunchingActivity
 import doctor.task.dentist.view.features.doctor.ReservationListActivity
 import doctor.task.dentist.view.features.patient.MainActivity
 import doctor.task.dentist.view.registration.RegistrationActivity
+import doctor.task.dentist.view.registration.RegistrationRepository
 
 class SplashActivity : AppCompatActivity() {
 
@@ -31,8 +33,12 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun getUserType(): String{
-        if (getSharedPreferences().contains("user"))
-            return getSharedPreferences().getString("user","null")!!
+        if (getSharedPreferences().contains("user")) {
+            //Get token
+            RegistrationRepository.token = getSharedPreferences().getString("token","null")!!
+            Log.d("token",RegistrationRepository.token)
+            return getSharedPreferences().getString("user", "null")!!
+        }
         else
             return "null"
     }

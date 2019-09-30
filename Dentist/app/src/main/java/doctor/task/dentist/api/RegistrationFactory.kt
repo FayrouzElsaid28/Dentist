@@ -4,6 +4,7 @@ import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.ANRequest
 import com.androidnetworking.common.Priority
 import org.json.JSONArray
+import org.json.JSONObject
 import java.io.File
 
 object RegistrationFactory {
@@ -16,16 +17,18 @@ object RegistrationFactory {
                         password: String,
                         age: String,
                         patientHistory: JSONArray): ANRequest<*> {
-        val androidNetworking = AndroidNetworking.post(PATIENT_REGISTER_URL)
-            .addBodyParameter("fullName",fullName)
-            .addBodyParameter("identityNumber",identityNumber)
-            .addBodyParameter("password",password)
-            .addBodyParameter("age",age)
-            .addBodyParameter(patientHistory)
+
+        val registerPatientJson = JSONObject()
+        registerPatientJson.put("fullName",fullName)
+        registerPatientJson.put("identityNumber",identityNumber)
+        registerPatientJson.put("password",password)
+        registerPatientJson.put("age",age)
+        registerPatientJson.put("patientHistory",patientHistory)
+
+        return AndroidNetworking.post(PATIENT_REGISTER_URL)
+            .addJSONObjectBody(registerPatientJson)
             .setPriority(Priority.MEDIUM)
             .build()
-
-        return androidNetworking
     }
 
     //Doctor register
@@ -38,7 +41,8 @@ object RegistrationFactory {
                        clinic: String,
                        cost: String,
                        workingTime: JSONArray): ANRequest<*> {
-        val androidNetworking = AndroidNetworking.post(DOCTOR_REGISTER_URL)
+
+        return AndroidNetworking.post(DOCTOR_REGISTER_URL)
             .addBodyParameter("fullName",fullName)
             .addBodyParameter(image)
             .addBodyParameter("identityNumber",identityNumber)
@@ -47,22 +51,19 @@ object RegistrationFactory {
             .addBodyParameter("specify",specify)
             .addBodyParameter("clinic",clinic)
             .addBodyParameter("cost",cost)
-            .addBodyParameter(workingTime)
+            .addBodyParameter("workingTime",workingTime.toString())
             .setPriority(Priority.MEDIUM)
             .build()
-
-        return androidNetworking
     }
 
     //Login
     fun login(identityNumber:String,
               password: String): ANRequest<*> {
-        val androidNetworking = AndroidNetworking.post(LOGIN_URL)
+
+        return AndroidNetworking.post(LOGIN_URL)
             .addBodyParameter("identityNumber",identityNumber)
             .addBodyParameter("password",password)
             .setPriority(Priority.MEDIUM)
             .build()
-
-        return androidNetworking
     }
 }

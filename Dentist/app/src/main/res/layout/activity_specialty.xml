@@ -6,6 +6,10 @@
     android:layout_height="match_parent"
     tools:context="doctor.task.dentist.view.features.patient.clinic.SpecialtyActivity">
 
+    <include layout="@layout/loading"
+        android:visibility="gone"
+        android:id="@+id/loading"/>
+
     <TextView
         android:id="@+id/specialty_name"
         android:text="@string/orthodontic"

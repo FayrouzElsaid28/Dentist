@@ -7,11 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import doctor.task.dentist.R
 import doctor.task.dentist.view.features.doctor.registeration.DoctorRegistrationHelper
+import org.json.JSONArray
 
 class AppointmentAdapter:
     RecyclerView.Adapter<AppointmentAdapter.ViewHolder>() {
 
-    var appointment_list = arrayListOf<DoctorRegistrationHelper>()
+    var appointment_list = JSONArray()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -24,18 +25,18 @@ class AppointmentAdapter:
     }
 
     override fun getItemCount(): Int {
-        return appointment_list.size
+        return appointment_list.length()
     }
 
-    fun setData(newData: ArrayList<DoctorRegistrationHelper>){
+    fun setData(newData: JSONArray){
         appointment_list = newData
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.appointment_day.text = appointment_list[position].appointment_day
-        holder.appointment_from.text = appointment_list[position].appointment_from
-        holder.appointment_to.text = appointment_list[position].appointment_to
+        holder.appointment_day.text = appointment_list.getJSONObject(position).getString("day")
+        holder.appointment_from.text = appointment_list.getJSONObject(position).getString("from")
+        holder.appointment_to.text = appointment_list.getJSONObject(position).getString("to")
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
