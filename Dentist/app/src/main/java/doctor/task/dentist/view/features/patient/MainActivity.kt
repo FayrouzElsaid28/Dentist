@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         }
         logout.setOnClickListener {
             logOut(this)
+            finishAffinity()
         }
 
         clinic1.setOnClickListener {

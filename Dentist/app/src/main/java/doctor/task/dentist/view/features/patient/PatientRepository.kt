@@ -17,10 +17,10 @@ object PatientRepository {
         data.value = Resource.loading()
 
         PatientFactory.getDoctorsBySpecialty(clinic,specify)
-            .getAsObjectList(Doctor::class.java, object : ParsedRequestListener<List<Doctor>>{
-                override fun onResponse(response: List<Doctor>?) {
+            .getAsObjectList(Doctor::class.java, object : ParsedRequestListener<ArrayList<Doctor>>{
+                override fun onResponse(response: ArrayList<Doctor>?) {
                     if (response?.size!! > 0){
-                        PatientHelper.doctorsList
+                        PatientHelper.doctorsList = response
                         data.postValue(Resource.success(""))
                     }else{
                         data.postValue(Resource.empty("",""))

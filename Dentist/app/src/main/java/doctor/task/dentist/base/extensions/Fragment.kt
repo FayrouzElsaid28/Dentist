@@ -41,11 +41,27 @@ fun Fragment.dispachGalleryIntent(){
 fun Fragment.selectTime(time_tv: TextView){
     val timePickerDialog = TimePickerDialog(context,
         TimePickerDialog.OnTimeSetListener { timePicker, hourOfDay, minutes ->
-            time_tv.text=String.format("%02d:%02d", hourOfDay, minutes)
+            val hours = setAccurateHour(hourOfDay)
+            if (hours < 9 || hours > 19){
+                makeLongToast("Time should be between 9 am and 7 pm")
+            }else {
+                time_tv.text = String.format("%02d:%02d", hours, minutes)
+            }
         }, 0, 0, true
     )
 
     timePickerDialog.show()
+}
+
+fun setAccurateHour(hour: Int): Int{
+    var hourTime = 0
+    if (hour < 9){
+        hourTime = hour + 12
+    }else{
+        hourTime = hour
+    }
+
+    return hourTime
 }
 
 fun Fragment.getSpecialty(specialtyName: String): String {

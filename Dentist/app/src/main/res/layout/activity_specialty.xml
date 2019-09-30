@@ -25,7 +25,7 @@
 
     <ImageView
         android:id="@+id/back"
-        android:src="@drawable/back_black"
+        android:src="@drawable/back"
         android:padding="15dp"
         app:layout_constraintTop_toTopOf="@id/specialty_name"
         app:layout_constraintBottom_toBottomOf="@id/specialty_name"

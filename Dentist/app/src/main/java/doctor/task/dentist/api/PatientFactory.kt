@@ -13,6 +13,7 @@ object PatientFactory {
 
         Log.d("clinic",clinic)
         Log.d("specify",specify)
+        Log.d("token", RegistrationRepository.token)
 
         return AndroidNetworking.get(DOCTORS_URL)
             .addQueryParameter("token",RegistrationRepository.token)
@@ -25,6 +26,14 @@ object PatientFactory {
     fun getDoctorInfo(): ANRequest<*> {
         return AndroidNetworking.get(DOCTOR_INFO_URL)
             .addQueryParameter("token",RegistrationRepository.token)
+            .build()
+    }
+
+    //Make reservation
+    fun makeReservation(date: String): ANRequest<*> {
+        return AndroidNetworking.post(MAKE_RESERVATION)
+            .addBodyParameter("token",RegistrationRepository.token)
+            .addBodyParameter("date",date)
             .build()
     }
 }

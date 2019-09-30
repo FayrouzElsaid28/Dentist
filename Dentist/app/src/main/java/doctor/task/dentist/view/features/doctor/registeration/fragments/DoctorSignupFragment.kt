@@ -111,7 +111,6 @@ class DoctorSignupFragment : Fragment(),
     private fun doctorSignup(){
         if (checkFields()){
             prepareData()
-            Log.d("image",imageFile.toString())
             viewModel.registerDoctor(
                 doctor_signup_fullname_et.text.toString(),
                 imageFile!!,
@@ -179,6 +178,8 @@ class DoctorSignupFragment : Fragment(),
 
             appointmentList.put(jsonObject)
         }
+
+        Log.d("date",appointmentList.toString())
     }
 
     override fun checkFields(): Boolean {
@@ -194,13 +195,19 @@ class DoctorSignupFragment : Fragment(),
     }
 
     private fun setAppointment(){
-        val appointmentJson = JSONObject()
-        appointmentJson.put("day", doctor_signup_day_spinner.selectedItem.toString())
-        appointmentJson.put("from", doctor_signup_appointments_from.text.toString())
-        appointmentJson.put("to", doctor_signup_appointments_to.text.toString())
+        val hoursFrom =  doctor_signup_appointments_from.text.toString().split(':').get(0).toInt()
+        val hoursTo =  doctor_signup_appointments_to.text.toString().split(':').get(0).toInt()
+        if (hoursTo <= hoursFrom){
+            makeLongToast("Leaving time should be less than attendance time")
+        }else {
+            val appointmentJson = JSONObject()
+            appointmentJson.put("day", doctor_signup_day_spinner.selectedItem.toString())
+            appointmentJson.put("from", doctor_signup_appointments_from.text.toString())
+            appointmentJson.put("to", doctor_signup_appointments_to.text.toString())
 
-        appointmentViewList.put(appointmentJson)
-        appointmentAdapter.setData(appointmentViewList)
+            appointmentViewList.put(appointmentJson)
+            appointmentAdapter.setData(appointmentViewList)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

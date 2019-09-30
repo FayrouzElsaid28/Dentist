@@ -39,6 +39,7 @@ class DoctorAdapter(private val callback: IDoctor):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.doctor_name.text = doctorsList[position].fullName
+
         holder.doctor_dates.text = getDoctorDates(doctorsList[position].workingTime)
         val imageUrl = doctorsList[position].imageUrl
         Picasso.with(callback.getContext()).load(imageUrl).into(holder.doctor_image)
@@ -46,8 +47,16 @@ class DoctorAdapter(private val callback: IDoctor):
 
     private fun getDoctorDates(workingTime: List<WorkingTime>): CharSequence? {
         var workingTimes = ""
-        for (time in workingTime){
-            workingTimes = "${time.day} From ${time.from} To ${time.to} \n"
+        if (workingTime != null) {
+            if (workingTime.size > 0) {
+                for (time in workingTime) {
+                    workingTimes = "${time.day} From ${time.from} To ${time.to} \n"
+                }
+            }else{
+                workingTimes = "No working times"
+            }
+        }else{
+            workingTimes = "Not set"
         }
         return workingTimes
     }

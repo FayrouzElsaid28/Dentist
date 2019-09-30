@@ -3,6 +3,7 @@ package doctor.task.dentist.view.features.patient.clinic
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -41,6 +42,7 @@ class SpecialtyActivity : AppCompatActivity(), IDoctor {
         ).observe(this, Observer {
             when(it.status){
                 Resource.Status.SUCCESS -> {
+                    Log.d("doctors",PatientHelper.doctorsList.toString())
                     adapter.setData(PatientHelper.doctorsList)
                     loading.visibility = View.GONE
                 }

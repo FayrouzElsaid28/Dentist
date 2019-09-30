@@ -3,9 +3,11 @@ package doctor.task.dentist.api
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.ANRequest
 import com.androidnetworking.common.Priority
+import okhttp3.OkHttpClient
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.File
+import java.util.concurrent.TimeUnit
 
 object RegistrationFactory {
 
@@ -42,16 +44,22 @@ object RegistrationFactory {
                        cost: String,
                        workingTime: JSONArray): ANRequest<*> {
 
-        return AndroidNetworking.post(DOCTOR_REGISTER_URL)
-            .addBodyParameter("fullName",fullName)
-            .addBodyParameter(image)
-            .addBodyParameter("identityNumber",identityNumber)
-            .addBodyParameter("password",password)
-            .addBodyParameter("phone",phone)
-            .addBodyParameter("specify",specify)
-            .addBodyParameter("clinic",clinic)
-            .addBodyParameter("cost",cost)
-            .addBodyParameter("workingTime",workingTime.toString())
+        return AndroidNetworking.upload(DOCTOR_REGISTER_URL)
+            .addQueryParameter("fullName",fullName)
+            .addMultipartFile("image",image)
+            .addQueryParameter("identityNumber",identityNumber)
+            .addQueryParameter("password",password)
+            .addQueryParameter("phone",phone)
+            .addQueryParameter("specify",specify)
+            .addQueryParameter("clinic",clinic)
+            .addQueryParameter("cost",cost)
+            .addQueryParameter("workingTime",workingTime.toString())
+            .setOkHttpClient(
+                OkHttpClient().newBuilder()
+                    .readTimeout(10000, TimeUnit.SECONDS)
+                    .connectTimeout(10000, TimeUnit.SECONDS)
+                    .writeTimeout(100000, TimeUnit.SECONDS)
+                    .build())
             .setPriority(Priority.MEDIUM)
             .build()
     }

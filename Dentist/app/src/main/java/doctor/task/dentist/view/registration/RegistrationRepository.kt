@@ -82,7 +82,7 @@ object RegistrationRepository {
 
                 override fun onError(anError: ANError?) {
                     Log.d("error", anError?.errorBody)
-                    data.postValue(Resource.error("Something went wrong"))
+                    data.postValue(Resource.error(anError?.errorBody))
                 }
             })
 

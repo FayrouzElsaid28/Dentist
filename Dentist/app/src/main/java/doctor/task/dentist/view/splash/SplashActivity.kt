@@ -37,6 +37,7 @@ class SplashActivity : AppCompatActivity() {
             //Get token
             RegistrationRepository.token = getSharedPreferences().getString("token","null")!!
             Log.d("token",RegistrationRepository.token)
+
             return getSharedPreferences().getString("user", "null")!!
         }
         else
