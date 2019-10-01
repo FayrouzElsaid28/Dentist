@@ -6,6 +6,8 @@
     <color name="patient_color">#DBF5FC</color>
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+    <color name="gray">#58585A</color>
+    <color name="green">#24E05F</color>
     <color name="red">#ff0000</color>
     <color name="transparent">#00000000</color>
 </resources>

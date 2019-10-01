@@ -25,7 +25,6 @@ object PatientRepository {
                     }else{
                         data.postValue(Resource.empty("",""))
                     }
-                    Log.d("doctor", response!![0].toString())
                 }
 
                 override fun onError(anError: ANError?) {

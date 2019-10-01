@@ -56,9 +56,9 @@ object RegistrationFactory {
             .addQueryParameter("workingTime",workingTime.toString())
             .setOkHttpClient(
                 OkHttpClient().newBuilder()
-                    .readTimeout(10000, TimeUnit.SECONDS)
-                    .connectTimeout(10000, TimeUnit.SECONDS)
-                    .writeTimeout(100000, TimeUnit.SECONDS)
+                    .readTimeout(1000, TimeUnit.SECONDS)
+                    .connectTimeout(1000, TimeUnit.SECONDS)
+                    .writeTimeout(1000, TimeUnit.SECONDS)
                     .build())
             .setPriority(Priority.MEDIUM)
             .build()
